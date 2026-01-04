@@ -1,0 +1,8 @@
+venv/
+__pycache__/
+*.pyc
+tasks.db
+.env
+
+# Debug helpers used during local debugging
+debug_*.py

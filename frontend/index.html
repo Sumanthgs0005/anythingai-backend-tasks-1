@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AnythingAI Tasks Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+    .card { background: #fff; padding: 16px; margin-bottom: 16px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    h1 { margin-bottom: 8px; }
+    label { display: block; margin-top: 8px; }
+    input, button { padding: 8px; margin-top: 4px; }
+    button { cursor: pointer; }
+    #status { margin-bottom: 16px; color: #006400; font-weight: bold; }
+    .error { color: #b00020; }
+    pre { background: #222; color: #eee; padding: 8px; border-radius: 4px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h1>AnythingAI Tasks Dashboard</h1>
+  <div id="status"></div>
+
+  <div class="card">
+    <h2>1. Register</h2>
+    <p>Create a user account. Tick “Is Admin” if you want an admin user.</p>
+    <label>Email</label>
+    <input id="reg-email" placeholder="you@example.com" />
+    <label>Password</label>
+    <input id="reg-password" placeholder="Password" type="password" />
+    <label>
+      <input type="checkbox" id="reg-admin" />
+      Is Admin
+    </label>
+    <button onclick="register()">Register</button>
+  </div>
+
+  <div class="card">
+    <h2>2. Login</h2>
+    <p>Login to get a token. This token is used for all task APIs.</p>
+    <label>Email</label>
+    <input id="login-email" placeholder="you@example.com" />
+    <label>Password</label>
+    <input id="login-password" placeholder="Password" type="password" />
+    <button onclick="login()">Login</button>
+    <p><strong>Current token (short):</strong> <span id="token-preview">Not logged in</span></p>
+  </div>
+
+  <div class="card">
+    <h2>3. My Tasks</h2>
+    <p>Create and view your own tasks (requires login).</p>
+    <label>Title</label>
+    <input id="task-title" placeholder="Task title" />
+    <label>Description</label>
+    <input id="task-desc" placeholder="Task description" />
+    <button onclick="createTask()">Create Task</button>
+    <button onclick="loadMyTasks()">Refresh My Tasks</button>
+    <h3>My Tasks (JSON)</h3>
+    <pre id="tasks-output">[]</pre>
+  </div>
+
+  <div class="card">
+    <h2>4. Admin – All Tasks</h2>
+    <p>Login as an admin user, then view all tasks.</p>
+    <button onclick="loadAllTasks()">Load All Tasks (Admin)</button>
+    <pre id="all-tasks-output">[]</pre>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
