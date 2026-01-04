@@ -40,6 +40,8 @@ See main repository for complete structure.
 
 ## Documentation
 
+
+**Note:** These URLs are for local development. After starting the server with `uvicorn app.main:app --reload`, access the documentation at:
 - Swagger UI: http://localhost:8000/docs
 - ReDoc: http://localhost:8000/redoc
 
@@ -57,7 +59,3 @@ Uses SQLite by default. Includes User and Task models with relationships.
 ## License
 
 MIT License
-"# anythingai-backend-tasks-1" 
-"# anythingai-backend-tasks-1" 
-# anythingai-backend-tasks-1
-# anythingai-backend-tasks-1  
